@@ -22,7 +22,7 @@ const myTableLayouts = require("./pdf-config/table-layouts.js");
 const docDefinition = require("./pdf-config/doc-definition.js")(products[0]);
 var PdfPrinter = require("pdfmake");
 
-app.get("/", async (req, res) => {
+app.get("/pdf-generate", async (req, res) => {
   try {
     var printer = new PdfPrinter(fonts);
     var pdfDoc = printer.createPdfKitDocument(docDefinition, {
